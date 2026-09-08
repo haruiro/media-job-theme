@@ -46,5 +46,4 @@ homecareer-theme/
 
 ## Author
 
-Izumi Yamashita  
-[mountaintagaki@gmail.com](mailto:mountaintagaki@gmail.com)
+[haruiro](https://github.com/haruiro)
