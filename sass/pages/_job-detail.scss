@@ -1,0 +1,422 @@
+@use "../abstracts" as *;
+
+// 求人詳細
+.job-detail {
+	&__inner {
+		max-width: $content__width-inner;
+		width: 96%;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr minmax(250px, 300px);
+		gap: 3.5%;
+		align-items: start;
+	}
+
+	// ヘッダー
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		margin-bottom: 24px;
+	}
+
+	&__logo-wrap {
+		flex-shrink: 0;
+	}
+
+	&__logo {
+		width: 100px;
+		height: 60px;
+		object-fit: contain;
+		border: 1px solid #e8e8e8;
+		padding: 8px;
+		border-radius: 4px;
+	}
+
+	&__logo-placeholder {
+		width: 100px;
+		height: 60px;
+		border: 1px solid #e8e8e8;
+		border-radius: 4px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 13px;
+		color: $color__text-sub;
+		background: $color__background-sub;
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		color: $color__text-main;
+		margin: 0 0 4px;
+		letter-spacing: $font__letter-spacing;
+	}
+
+	&__company {
+		color: $color__text-sub;
+		margin: 0;
+	}
+
+	&__catch {
+		font-size: 32px;
+		font-weight: 700;
+		color: $color__text-main;
+		letter-spacing: $font__letter-spacing;
+		line-height: 1.4;
+		margin: 0 0 32px;
+	}
+
+	&__thumb {
+		margin-bottom: 48px;
+
+		&-img {
+			width: 100%;
+			height: auto;
+			display: block;
+			border-radius: 4px;
+		}
+
+		&--video {
+			position: relative;
+			aspect-ratio: 16 / 9;
+			border-radius: 4px;
+			overflow: hidden;
+
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	// セクション
+	&__section {
+		margin-bottom: 48px;
+	}
+
+	&__section-title {
+		font-size: $font__size-h2;
+		font-weight: 700;
+		color: $color__text-main;
+		letter-spacing: $font__letter-spacing;
+		padding-left: 14px;
+		border-left: 4px solid $color__main;
+		margin: 0 0 24px;
+		line-height: 1.2;
+	}
+
+	// テーブル
+	&__table {
+		width: 100%;
+		border-collapse: collapse;
+		line-height: $font__line-height-body;
+
+		tr {
+			border-bottom: 1px solid #e8e8e8;
+		}
+
+		th {
+			width: 140px;
+			padding: 20px 16px 20px 0;
+			vertical-align: top;
+			font-weight: 700;
+			color: $color__text-main;
+			white-space: nowrap;
+		}
+
+		td {
+			padding: 20px 0;
+			color: $color__text-main;
+			vertical-align: top;
+		}
+	}
+
+	// DLリスト（勤務条件・企業情報）
+	&__dl {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__dl-row {
+		dt {
+			font-weight: 700;
+			margin-bottom: 2px;
+		}
+
+		dd {
+			margin: 0;
+		}
+	}
+
+	// サイドバー
+	&__sidebar {
+		position: sticky;
+		top: 20px;
+	}
+
+	&__sidebar-card {
+		border: 1px solid $color__main;
+		border-radius: 10px;
+		padding: 40px 20px;
+	}
+
+	&__sidebar-logo {
+		margin-bottom: 16px;
+
+		img {
+			width: 80px;
+			height: 48px;
+			object-fit: contain;
+			border: 1px solid #e8e8e8;
+			padding: 6px;
+			border-radius: 4px;
+		}
+	}
+
+	&__sidebar-title {
+		font-weight: 700;
+		color: $color__text-main;
+		margin: 0 0 4px;
+		letter-spacing: $font__letter-spacing;
+	}
+
+	&__sidebar-company {
+		color: $color__text-sub;
+		margin: 0 0 20px;
+	}
+
+	&__sidebar-meta {
+		list-style: none;
+		margin: 0 0 24px;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__sidebar-meta-label {
+		display: flex;
+    align-items: center;
+		gap: 2px;
+		font-weight: 700;
+		color: $color__main;
+		letter-spacing: $font__letter-spacing;
+	}
+
+	&__sidebar-meta-value {
+		color: $color__text-main;
+		margin: 0;
+	}
+
+	&__apply-btn {
+		display: block;
+		text-align: center;
+		padding: 14px;
+		font-weight: 700;
+		letter-spacing: $font__letter-spacing;
+	}
+}
+
+// 動画グリッド
+.job-detail__videos {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+
+.job-detail__video-thumb {
+	position: relative;
+	display: block;
+	width: 100%;
+	border: none;
+	padding: 0;
+	background: none;
+	cursor: pointer;
+	border-radius: 6px;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		display: block;
+	}
+}
+
+.job-detail__video-play {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	width: 48px;
+	height: 48px;
+	pointer-events: none;
+}
+
+.job-detail__video-title {
+	display: block;
+	font-size: 13px;
+	color: $color__text-main;
+	padding: 8px 4px 0;
+	text-align: left;
+	line-height: 1.4;
+}
+
+// 動画モーダル
+.video-modal {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	align-items: center;
+	justify-content: center;
+
+	&.is-open {
+		display: flex;
+	}
+
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.85);
+		cursor: pointer;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 1;
+		width: 90%;
+		max-width: 860px;
+	}
+
+	&__close {
+		position: absolute;
+		top: -40px;
+		right: 0;
+		background: none;
+		border: none;
+		color: #fff;
+		font-size: 24px;
+		cursor: pointer;
+		line-height: 1;
+		padding: 4px;
+	}
+
+	&__iframe-wrap {
+		position: relative;
+		aspect-ratio: 16 / 9;
+		background: #000;
+
+		iframe {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+// SP固定応募ボタン
+.job-detail__sp-apply {
+	display: none;
+}
+
+@include tb {
+	.job-detail {
+		&__table {
+      tr {
+        display: block;
+        border-bottom: none;
+			}
+
+			th, td {
+				display: block;
+				width: 100%;
+				padding: 20px 0 0;
+			}
+
+			th {
+				padding-bottom: 0;
+        text-align: left;
+			}
+		}
+  }
+}
+
+@include sp {
+	.job-detail {
+
+		&__inner {
+      width: 92%;
+			grid-template-columns: 1fr;
+		}
+
+		&__sidebar {
+			display: none;
+		}
+
+    &__header {
+      margin-bottom: 10px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__catch {
+      margin-bottom: 10px;
+			font-size: 24px;
+		}
+
+    &__thumb {
+      margin-bottom: 30px;
+    }
+
+    &__section-title {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+	}
+
+	.job-detail__videos {
+		grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+	}
+
+	.job-detail__sp-apply {
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+	}
+
+	.job-detail__sp-apply-btn {
+		display: block;
+		text-align: center;
+		padding: 15px 20px;
+		font-weight: 700;
+    border-radius: 0;
+	}
+}
+
+@include tb {
+	.job-detail__videos {
+		grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .job-detail__videos {
+		grid-template-columns: repeat(1, 1fr);
+  }
+}

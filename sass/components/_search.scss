@@ -1,0 +1,157 @@
+@use "../abstracts" as *;
+
+.search-section {
+  position: relative;
+
+	&__inner {
+    width: 96%;
+    max-width: 1040px;
+		margin: 0 auto;
+		padding: 25px;
+    background: #e5dbdb;
+    box-sizing: border-box;
+	}
+
+	&--top {
+		margin-top: -82.5px;
+		text-align: center;
+
+		.search-section__inner {
+			display: inline-block;
+    	background: rgba(255, 245, 245, 0.898);
+		}
+	}
+}
+
+.search-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	&__filters {
+		display: flex;
+    justify-content: space-between;
+    align-items: center;
+		gap: 10px;
+	}
+
+	&__select-wrap {
+		position: relative;
+		display: flex;
+		align-items: center;
+    width: 30%;
+
+		&--last {
+			border-right: none;
+
+			.search-form__select {
+				padding-right: 32px;
+			}
+		}
+	}
+
+	&__select {
+		appearance: none;
+		border: 1px solid $color__border;
+		outline: none;
+		padding: 10px 40px 10px 16px;
+		font-size: 14px;
+		color: $color__text-main;
+		font-family: $font__main;
+		background: $color__background url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23AEAEAE' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;
+		cursor: pointer;
+    width: 100%;
+
+		&:focus {
+			background-color: #fafafa;
+		}
+	}
+
+	&__clear {
+		position: absolute;
+		right: 32px;
+		background: none;
+		border: none;
+		color: $color__text-sub;
+		font-size: 14px;
+		cursor: pointer;
+		padding: 0 4px;
+		line-height: 1;
+
+		&:hover {
+			color: $color__text-main;
+		}
+	}
+
+	&__separator {
+		color: $color__main;
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	&__keyword-row {
+		display: flex;
+		gap: 20px;
+		align-items: center;
+	}
+
+	&__keyword {
+		flex: 1;
+		// max-width: 600px;
+		border: 1px solid $color__border;
+		padding: 10px 16px;
+		font-size: 14px;
+		font-family: $font__main;
+		color: $color__text-main;
+		outline: none;
+
+		&::placeholder {
+			color: $color__text-sub;
+		}
+
+		&:focus {
+			border-color: $color__main;
+		}
+	}
+
+	&__submit {
+		padding: 10px 24px;
+		font-size: 14px;
+		white-space: nowrap;
+	}
+}
+
+
+@include sp {
+	.search-section {
+		// margin-top: 0;
+
+		&__inner {
+			width: 92%;
+      padding: 20px 25px;
+      box-sizing: border-box;
+		}
+	}
+
+	.search-form {
+		gap: 12px;
+
+		&__filters {
+			flex-direction: column;
+		}
+
+		&__select-wrap {
+			width: 100%;
+		}
+
+		&__keyword-row {
+			flex-direction: column;
+			gap: 10px;
+		}
+
+    &__keyword {
+      width: 100%;
+      box-sizing: border-box;
+		}
+	}
+}

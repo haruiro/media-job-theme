@@ -1,0 +1,130 @@
+@use "../abstracts" as *;
+
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3.5%;
+}
+
+.card {
+	border-radius: 4px;
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	background: $color__background;
+
+	&:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	}
+
+	&__link {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	&__thumb {
+		position: relative;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		background: $color__text-sub;
+
+		&--placeholder {
+			background: linear-gradient(135deg, #c8c8c8 0%, #a0a0a0 100%);
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	&__play-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 48px;
+		height: 48px;
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__body {
+		padding: 12px;
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		color: $color__main;
+		margin: 0 0 6px;
+		letter-spacing: $font__letter-spacing;
+		line-height: $font__line-height-body;
+	}
+
+	&__excerpt {
+		font-size: 16px;
+		color: $color__text-main;
+		margin: 0;
+		line-height: $font__line-height-body;
+	}
+
+	&__company {
+		font-size: 14px;
+		color: $color__text-sub;
+		margin: 0;
+	}
+
+	// 新着動画カードは背景あり
+	&--video {
+		background: $color__background;
+		padding: 0 0 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+		.card__link {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		.card__body {
+			padding: 12px 12px 0;
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+
+		.card__title {
+			font-size: 20px;
+			color: $color__text-main;
+			flex: 1;
+		}
+	}
+}
+
+@include sp {
+	.card-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.card {
+		&__title {
+			font-size: 18px;
+		}
+
+		&__excerpt {
+			font-size: 14px;
+		}
+
+		&--video .card__title {
+			font-size: 16px;
+		}
+	}
+}

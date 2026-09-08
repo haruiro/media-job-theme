@@ -1,0 +1,118 @@
+@use "../abstracts" as *;
+
+.page-content {
+	width: 92%;
+	max-width: 1040px;
+	margin: 0 auto;
+
+	&__title {
+		font-size: $font__size-h2;
+		font-weight: 700;
+		color: $color__text-main;
+		letter-spacing: $font__letter-spacing;
+		margin: 0 0 40px;
+		padding-left: 14px;
+		border-left: 4px solid $color__main;
+		line-height: 1.2;
+	}
+
+	&__body {
+		line-height: 2;
+		color: $color__text-main;
+
+		h2 {
+			font-size: 20px;
+			font-weight: 700;
+			margin: 40px 0 16px;
+		}
+
+		h3 {
+			font-size: 17px;
+			font-weight: 700;
+			margin: 24px 0 12px;
+		}
+
+		p {
+			margin: 0 0 16px;
+		}
+
+		ul, ol {
+			padding-left: 1.5em;
+			margin: 0 0 16px;
+		}
+
+		a {
+			color: $color__main;
+			text-decoration: underline;
+		}
+	}
+}
+
+@include sp {
+	.page-content {
+		&__title {
+			font-size: 20px;
+      margin-bottom: 20px;
+		}
+	}
+}
+
+.page-company{
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      vertical-align: top;
+      line-height: 1.8;
+    }
+
+    td:first-child {
+      width: 20%;
+      text-align: center;
+      background: $color__background-sub;
+      font-weight: 700;
+    }
+
+    td:last-child {
+      width: 80%;
+      padding-left: 1rem;
+    }
+  }
+
+  @include sp {
+    figure {
+      overflow: visible;
+    }
+
+    table {
+      td:first-child{
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        border-bottom: none;
+        text-align: left;
+      }
+
+      td:last-child {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+      }
+
+      tr:not(:last-child) td:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.page-terms-jobseeker,
+.page-terms-company {
+  .page-content__body p {
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+}

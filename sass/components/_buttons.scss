@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+.btn {
+	display: inline-block;
+	padding: 8px 16px;
+	border-radius: 4px;
+	font-size: $font__size-header;
+	text-decoration: none;
+	cursor: pointer;
+	letter-spacing: $font__letter-spacing;
+	font-family: $font__main;
+	transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+	border: 1px solid transparent;
+
+	&--main {
+		background: $color__main;
+		color: $color__background;
+		border-color: $color__main;
+
+		// 色反転ホバー
+		&:hover {
+			background: $color__background;
+			color: $color__main;
+			border-color: $color__main;
+		}
+  }
+
+	&--primary {
+		background: $color__primary;
+		color: $color__background;
+		border-color: $color__primary;
+
+		// 色反転ホバー
+		&:hover {
+			background: $color__background;
+			color: $color__primary;
+			border-color: $color__primary;
+		}
+  }
+
+	&--outline {
+		background: transparent;
+		color: $color__main;
+		border-color: $color__main;
+
+		&:hover {
+			background: $color__main;
+			color: $color__background;
+		}
+	}
+}

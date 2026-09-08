@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+.breadcrumb {
+	padding: 12px 0 0;
+
+	&__inner {
+		max-width: $content__width;
+		margin: 0 auto;
+    padding: 0 2.7777777778%;
+		font-size: 12px;
+		color: $color__text-sub;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		flex-wrap: wrap;
+
+		a {
+			color: $color__text-sub;
+			text-decoration: none;
+
+			&:hover {
+				color: $color__text-main;
+			}
+		}
+	}
+
+	&__sep {
+		color: $color__text-sub;
+	}
+}

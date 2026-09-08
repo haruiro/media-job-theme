@@ -1,0 +1,27 @@
+@use "../variables/structure" as *;
+
+// Responsive breakpoints
+@mixin sp {
+	@media screen and (max-width: $breakpoint-sp) {
+		@content;
+	}
+}
+
+@mixin tb {
+	@media screen and (max-width: 900px) {
+		@content;
+	}
+}
+
+@mixin pc {
+	@media screen and (min-width: $breakpoint-pc) {
+		@content;
+	}
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

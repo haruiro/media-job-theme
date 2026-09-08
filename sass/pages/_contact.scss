@@ -1,0 +1,294 @@
+@use "../abstracts" as *;
+
+.thanks {
+	&__inner {
+		text-align: center;
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		letter-spacing: $font__letter-spacing;
+		margin: 0 0 32px;
+	}
+
+	&__body {
+		line-height: 2;
+		margin: 0 0 32px;
+	}
+
+	&__note {
+		line-height: 2;
+		margin: 0;
+	}
+}
+
+.contact {
+  width: 100%;
+  max-width: 1040px;
+  margin: 70px auto;
+  padding: 0;
+	background: $color__background-sub;
+
+	&__inner {
+		width: 90%;
+		max-width: 650px;
+		margin: 0 auto;
+		padding: 60px 80px;
+	}
+
+	&__title {
+		font-size: 32px;
+		font-weight: 700;
+		text-align: center;
+		color: $color__text-main;
+		letter-spacing: $font__letter-spacing;
+		margin: 0 0 20px;
+		padding-bottom: 10px;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			width: 40px;
+			height: 3px;
+			background: $color__main;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__lead {
+		text-align: center;
+		margin: 0 -20px 50px;
+	}
+}
+
+// CF7 カスタムスタイル
+.cf7-field {
+	margin-bottom: 30px;
+
+	label {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		font-weight: 700;
+		color: $color__text-main;
+		margin-bottom: 8px;
+	}
+
+	pre {
+		font-family: inherit;
+		font-size: 14px;
+		color: $color__text-main;
+		white-space: pre-wrap;
+		word-break: break-all;
+		margin: 0;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="url"],
+	select,
+	textarea {
+		width: 100%;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 14px;
+		font-size: 14px;
+		font-family: inherit;
+		color: $color__text-main;
+		background: #fff;
+		box-sizing: border-box;
+		transition: border-color 0.2s;
+
+		&::placeholder {
+			color: #d6d6d6;
+		}
+
+		&:focus {
+			outline: none;
+			border-color: $color__main;
+		}
+
+		&[readonly] {
+			background: #f5f5f5;
+			color: $color__text-sub;
+		}
+	}
+
+	textarea {
+		min-height: 160px;
+		resize: vertical;
+	}
+}
+
+.cf7-note {
+	display: block;
+	font-size: 12px;
+	color: $color__text-sub;
+	margin-top: 6px;
+}
+
+.cf7-badge {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 700;
+	padding: 2px 6px;
+	border-radius: 3px;
+	border: 1px solid $color__text-sub;
+	color: $color__text-sub;
+	background-color: $color__background;
+
+	&--required {
+		border-color: $color__main;
+		color: $color__main;
+	}
+
+	&--auto {
+		border-color: #3a86ff;
+		color: #3a86ff;
+	}
+}
+
+.cf7-agree {
+	margin-bottom: 32px;
+
+	.wpcf7-list-item {
+		margin: 0;
+	}
+
+	label {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 14px;
+		color: $color__text-main;
+		cursor: pointer;
+	}
+
+	input[type="checkbox"] {
+		width: 18px;
+		height: 18px;
+		flex-shrink: 0;
+		accent-color: $color__main;
+	}
+
+	a {
+		color: $color__main;
+		text-decoration: underline;
+	}
+}
+
+.cf7-confirm-actions {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+  margin-top: 50px;
+}
+
+.wpcf7-previous {
+	display: block;
+	width: 320px;
+	background: #fff;
+	color: $color__main;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: $font__letter-spacing;
+	padding: 18px;
+	border: 1px solid $color__main;
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+	transition: opacity 0.2s;
+
+	&:hover {
+		opacity: 0.85;
+	}
+}
+
+.wpcf7-submit {
+	display: block;
+	width: 320px;
+	background: $color__main;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: $font__letter-spacing;
+  margin: 0 auto;
+	padding: 18px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: opacity 0.2s;
+
+	&:hover {
+		opacity: 0.85;
+	}
+}
+
+.wpcf7-spinner {
+	display: none !important;
+}
+
+.wpcf7-not-valid-tip {
+	color: $color__main;
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.wpcf7-response-output {
+	margin-top: 16px;
+	padding: 12px 16px;
+	border-radius: 4px;
+	font-size: 14px;
+	border: none !important;
+
+	&.wpcf7-mail-sent-ok {
+		background: #e6f4ea;
+		color: #2e7d32;
+	}
+
+	&.wpcf7-validation-errors,
+	&.wpcf7-mail-sent-ng {
+		background: #fdecea;
+		color: #c62828;
+	}
+}
+
+@include sp {
+	.contact {
+		margin: -30px auto 0;
+		padding: 70px 0 30px;
+
+		&__inner {
+			padding: 0;
+			background: transparent;
+		}
+
+		&__title {
+			font-size: 22px;
+		}
+
+		&__lead {
+			margin-bottom: 30px;
+		}
+	}
+
+  .cf7-confirm-actions {
+	  flex-direction: column;
+	  gap: 12px;
+    margin-top: 0;
+  }
+
+  .wpcf7-submit {
+    width: 100%;
+  }
+
+  .wpcf7-previous {
+    width: 100%;
+  }
+}

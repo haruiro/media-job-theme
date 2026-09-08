@@ -1,0 +1,191 @@
+@use '../abstracts' as *;
+
+.site-header {
+	width: 100%;
+	background: $color__background;
+	border-bottom: 6px solid $color__main;
+
+	&__inner {
+		max-width: $content__width;
+		margin: 0 auto;
+		padding: 0 calc(40 / 1440 * 100%);
+		height: 94px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		a {
+			display: block;
+		}
+		img {
+			height: 60px;
+			width: auto;
+      vertical-align: middle;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: 32px;
+	}
+
+	&__menu {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		gap: 24px;
+
+		a {
+			font-size: $font__size-header;
+			color: $color__text-main;
+			text-decoration: none;
+			position: relative;
+			letter-spacing: $font__letter-spacing;
+
+			// Underline fades in from bottom
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background: $color__text-main;
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: transform 0.3s ease;
+			}
+
+			&:hover::after {
+				transform: scaleX(1);
+			}
+		}
+	}
+}
+
+// ハンバーガーメニュー
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	gap: 6px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+
+	span {
+		display: block;
+		width: 24px;
+		height: 2px;
+		background: $color__text-main;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.menu-toggle {
+		display: flex;
+	}
+
+	.site-header__nav {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.site-header {
+		&__inner {
+			height: 64px;
+			padding: 0 20px;
+		}
+
+		&__logo img {
+			height: 40px;
+		}
+
+    &__logo-sp img {
+      display: block;
+      width: 160px;
+			height: auto;
+      margin-bottom: 30px;
+		}
+
+    &__nav {
+			display: none;
+
+			&.is-open {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				background: $color__background;
+				padding: 0;
+				z-index: 999;
+				gap: 32px;
+			}
+		}
+
+		&__menu {
+			flex-direction: column;
+			align-items: center;
+			gap: 24px;
+			width: 100%;
+
+			a {
+				display: block;
+				font-size: 16px;
+				text-align: center;
+
+				&::after {
+					display: none;
+				}
+			}
+		}
+
+		&__sp-logo {
+			display: none;
+
+			.site-header__nav.is-open & {
+				display: block;
+				margin-bottom: 8px;
+
+				img {
+					height: 50px;
+				}
+			}
+		}
+	}
+
+	.menu-toggle {
+		display: flex;
+		z-index: 1000;
+		position: relative;
+		width: 24px;
+		height: 24px;
+		justify-content: center;
+		align-items: center;
+
+		span {
+			position: absolute;
+			transition: transform 0.3s ease, opacity 0.3s ease;
+
+			&:nth-child(1) { transform: translateY(-8px); }
+			&:nth-child(3) { transform: translateY(8px); }
+		}
+
+		// ✕アイコンに変化
+		&.is-active {
+			span:nth-child(1) { transform: translateY(0) rotate(45deg); }
+			span:nth-child(2) { opacity: 0; }
+			span:nth-child(3) { transform: translateY(0) rotate(-45deg); }
+		}
+	}
+}

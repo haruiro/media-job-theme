@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+.sp-only {
+	@include pc {
+		display: none !important;
+	}
+}
+
+.pc-only {
+	@include sp {
+		display: none !important;
+	}
+}
+
+.text-center {
+  text-align: center;
+}
+
+.page-body {
+  padding: 70px 0;
+
+  @include sp {
+    padding: 30px 0 40px;
+  }
+}

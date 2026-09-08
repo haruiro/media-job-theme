@@ -1,0 +1,134 @@
+@use "../abstracts" as *;
+
+.about {
+	&__inner {
+		width: 92%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	&__title {
+		font-size: $font__size-h2;
+		font-weight: 700;
+		color: $color__text-main;
+		letter-spacing: $font__letter-spacing;
+		margin: 0 0 40px;
+		padding-left: 14px;
+		border-left: 4px solid $color__main;
+		line-height: 1.2;
+	}
+
+	&__video {
+		margin: 0 0 48px;
+	}
+
+	&__video-wrap {
+		position: relative;
+		aspect-ratio: 16 / 9;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__lead {
+		margin: 0 0 48px;
+		line-height: 2;
+		color: $color__text-main;
+		font-size: 16px;
+	}
+
+	&__points {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		margin: 0 0 56px;
+	}
+
+	&__point {
+		background: $color__background-sub;
+		border-radius: 8px;
+		padding: 28px 32px;
+	}
+
+	&__point-head {
+		display: flex;
+		align-items: baseline;
+		gap: 12px;
+		margin: 0 0 12px;
+	}
+
+	&__point-label {
+		font-size: 14px;
+		font-weight: 700;
+		color: $color__main;
+		white-space: nowrap;
+	}
+
+	&__point-title {
+		font-size: 18px;
+		font-weight: 700;
+		color: $color__text-main;
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	&__point-body {
+		font-size: 15px;
+		line-height: 1.9;
+		color: $color__text-main;
+		margin: 0;
+	}
+
+	&__cta {
+		text-align: center;
+		padding: 48px 0 0;
+		border-top: 1px solid $color__border;
+
+		p {
+			margin: 0 0 20px;
+			color: $color__text-main;
+		}
+	}
+}
+
+@include sp {
+	.about {
+		&__inner {
+			padding: 40px 0 60px;
+		}
+
+		&__title {
+			font-size: 20px;
+			margin-bottom: 24px;
+		}
+
+		&__lead {
+			font-size: 15px;
+		}
+
+		&__point {
+			padding: 20px;
+		}
+
+		&__point-head {
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		&__point-title {
+			font-size: 16px;
+		}
+
+		&__point-body {
+			font-size: 14px;
+			br {
+				display: none;
+			}
+		}
+	}
+}

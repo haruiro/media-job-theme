@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+.site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	.site-main {
+		flex: 1;
+	}
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	font-size: 1rem;
+	line-height: $font__line-height-body;
+}

@@ -1,0 +1,72 @@
+@use "../abstracts" as *;
+
+.category-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+// Override: use flexbox for more control
+.category-grid {
+  position: relative;
+  display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.category-card {
+  position: relative;
+	// gap: 20px;
+	display: block;
+	border-radius: 4px;
+	overflow: hidden;
+	aspect-ratio: 354 / 244;
+	text-decoration: none;
+
+  img {
+    width: 100%;
+  }
+
+	&__overlay {
+		position: absolute;
+    // width: 100%;
+		inset: 0;
+		background: rgba($color__main, 0.55);
+		transition: opacity 0.3s ease;
+	}
+
+	&__name {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $color__background;
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: $font__letter-spacing;
+		z-index: 1;
+		text-align: center;
+		padding: 16px;
+	}
+
+	&:hover {
+		.category-card__overlay {
+			opacity: 0;
+		}
+	}
+}
+
+@include sp {
+	.category-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 12px;
+	}
+
+	.category-card {
+		&__name {
+      padding: 0;
+			font-size: 16px;
+		}
+	}
+}
