@@ -3,7 +3,7 @@
  * 応募確認ページ
  * Template Name: 問い合わせ確認
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 get_header();

@@ -2,7 +2,7 @@
 /**
  * カスタム投稿タイプとタクソノミーの登録
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 // =============================================

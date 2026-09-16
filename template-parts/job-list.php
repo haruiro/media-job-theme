@@ -2,7 +2,7 @@
 /**
  * 求人カード一覧 + ページネーション
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 $title = $args['title'] ?? '求人情報一覧';

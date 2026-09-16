@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 ?>

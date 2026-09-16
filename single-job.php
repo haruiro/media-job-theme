@@ -2,7 +2,7 @@
 /**
  * 求人詳細ページ
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 get_header();

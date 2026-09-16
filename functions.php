@@ -1,10 +1,10 @@
 <?php
 /**
- * homecareer-theme functions and definitions
+ * media-job-theme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -23,10 +23,10 @@ function homecareer_theme_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on homecareer-theme, use a find and replace
-		* to change 'homecareer-theme' to the name of your theme in all the template files.
+		* If you're building a theme based on media-job-theme, use a find and replace
+		* to change 'media-job-theme' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'homecareer-theme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'media-job-theme', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,7 +49,7 @@ function homecareer_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'homecareer-theme' ),
+			'menu-1' => esc_html__( 'Primary', 'media-job-theme' ),
 			'footer' => 'フッター',
 		)
 	);

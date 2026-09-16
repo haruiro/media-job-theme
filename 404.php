@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 get_header();

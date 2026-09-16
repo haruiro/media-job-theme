@@ -2,7 +2,7 @@
 /**
  * 求人検索フォーム
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 $employment_terms   = $args['employment_terms']   ?? array();

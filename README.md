@@ -27,7 +27,7 @@ Built as a freelance project, with client-specific content replaced for portfoli
 ## Theme Structure
 
 ```
-homecareer-theme/
+media-job-theme/
 ├── sass/
 │   ├── abstracts/       # Variables, mixins
 │   ├── base/            # Reset, typography

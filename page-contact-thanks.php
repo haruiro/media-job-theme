@@ -8,7 +8,7 @@ if ( isset( $_COOKIE['cf7msm_posted_data'] ) ) {
  * 応募サンクスページ
  * Template Name: 問い合わせサンクス
  *
- * @package homecareer-theme
+ * @package media-job-theme
  */
 
 get_header();
